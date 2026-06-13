@@ -12,17 +12,29 @@ function sendMail() {
         area: document.getElementById("area").value
     };
 
+    // Send to your Gmail
     emailjs.send(
+        "service_jwtj73v",
+        "template_zvgw69y",
+        parms
+    )
+    .then(function () {
+
+        // Send confirmation to candidate
+        emailjs.send(
             "service_jwtj73v",
-            "template_zvgw69y",
+            "template_wjjva1f",
             parms
-        )
-        .then(function(response) {
-            alert("Email Sent Successfully!");
-            console.log("SUCCESS", response);
-        })
-        .catch(function(error) {
-            alert("Email Failed!");
-            console.log("ERROR", error);
-        });
+        );
+
+        alert("Application Submitted Successfully!");
+
+    })
+    .catch(function (error) {
+
+        document.getElementById("message").innerHTML =
+        "❌ Application failed. Please try again later.";
+
+        console.log(error);
+    });
 }
