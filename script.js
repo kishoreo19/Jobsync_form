@@ -14,7 +14,7 @@ function sendMail() {
 
     // Send to your Gmail
     emailjs.send(
-        "service_jwtj73v",
+        "service_dll8xo3",
         "template_zvgw69y",
         parms
     )
@@ -22,7 +22,7 @@ function sendMail() {
 
         // Send confirmation to candidate
         emailjs.send(
-            "service_jwtj73v",
+            "service_dll8xo3",
             "template_wjjva1f",
             parms
         );
